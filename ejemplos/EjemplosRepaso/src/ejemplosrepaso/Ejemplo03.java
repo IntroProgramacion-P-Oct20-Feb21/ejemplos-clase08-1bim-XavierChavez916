@@ -22,6 +22,7 @@ public class Ejemplo03 {
         String pais;
         String region = "";
         int tipoRegion;
+        String mensaje_final = "";
         System.out.println("Ingrese el tipo los siguientes datos para imprimir "
                 + "la región del Ecuador.\n"
                 + "1 para Región Sierra\n"
@@ -31,26 +32,32 @@ public class Ejemplo03 {
         tipoRegion = entrada.nextInt();
         
         if(tipoRegion==1){
-            region = "Región Sierra";
+            region = ("%sRegión Sierra");
+            mensaje_final = String.format("Usted selecciono: %s\n",region);
         }else{
             if (tipoRegion==2) {
                 region = "Región Costa";
+                 mensaje_final = String.format("Usted selecciono: %s\n",region);
             }else{
                 if (tipoRegion==3) {
                     region = "Región Amazónica";
+                     mensaje_final = String.format("Usted selecciono: %s\n",
+                             region);
                 }else{
                     if (tipoRegion==4) {
                         region = "Región Insular";
+                        mensaje_final = String.format("Usted selecciono: %s\n",
+                                region);
                     }else{
-                        if(tipoRegion > 4){
-                            System.out.println("Error, no existe región.");
-                        }
+                        region = ("Error, no existe región.");
+                        mensaje_final = String.format("%s\n",region);
+                        
                     }
                 }
             }
         }
         
-        System.out.printf("Usted seleccionó: %s\n", region);
+        System.out.printf("%s\n", mensaje_final);
     }
     
 }
