@@ -41,6 +41,10 @@ public class Ejemplo03 {
                 }else{
                     if (tipoRegion==4) {
                         region = "Región Insular";
+                    }else{
+                        if(tipoRegion > 4){
+                            System.out.println("Error, no existe región.");
+                        }
                     }
                 }
             }
